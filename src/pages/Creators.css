@@ -1,0 +1,186 @@
+/* ============================================
+   CREATORS PAGE
+   ============================================ */
+
+.creators-hero {
+  background:
+    url('https://images.pexels.com/photos/4152464/pexels-photo-4152464.jpeg?auto=compress&cs=tinysrgb&w=1600')
+    center / cover no-repeat fixed;
+}
+
+/* Benefits */
+.creators-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.benefit-card {
+  background: var(--white);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--accent-400), var(--accent-600));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.benefit-card:hover::before {
+  transform: scaleX(1);
+}
+
+.benefit-number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent-200);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.benefit-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+  color: var(--ink-500);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* What We Look For */
+.creators-lookfor {
+  background: var(--warm-gray);
+}
+
+.lookfor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.lookfor-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin: var(--space-2) 0 var(--space-3);
+  line-height: 1.2;
+}
+
+.lookfor-text {
+  color: var(--ink-500);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.lookfor-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lookfor-list li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.lookfor-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-100);
+  color: var(--accent-600);
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.lookfor-list strong {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--ink-900);
+  margin-bottom: 0.2rem;
+}
+
+.lookfor-list p {
+  font-size: 0.9rem;
+  color: var(--ink-500);
+  line-height: 1.6;
+}
+
+/* Application Form */
+.application-section {
+  background: var(--cream);
+}
+
+.application-header {
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.application-intro {
+  color: var(--ink-500);
+  font-size: 1.05rem;
+  margin-top: var(--space-2);
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.application-form-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.form-section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-600);
+  margin: var(--space-3) 0 var(--space-2);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ink-100);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .creators-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  .lookfor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
