@@ -1,186 +1,38 @@
-/* ============================================
-   CREATORS PAGE
-   ============================================ */
-
-.creators-hero {
-  background:
-    url('https://images.pexels.com/photos/4152464/pexels-photo-4152464.jpeg?auto=compress&cs=tinysrgb&w=1600')
-    center / cover no-repeat fixed;
-}
-
-/* Benefits */
-.creators-benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-4);
-}
-
-.benefit-card {
-  background: var(--white);
-  padding: var(--space-5);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition), box-shadow var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.benefit-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, var(--accent-400), var(--accent-600));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition);
-}
-
-.benefit-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-}
-
-.benefit-card:hover::before {
-  transform: scaleX(1);
-}
-
-.benefit-number {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--accent-200);
-  line-height: 1;
-  margin-bottom: var(--space-2);
-}
-
-.benefit-card h3 {
-  margin-bottom: 0.5rem;
-}
-
-.benefit-card p {
-  color: var(--ink-500);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-/* What We Look For */
-.creators-lookfor {
-  background: var(--warm-gray);
-}
-
-.lookfor-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: var(--space-6);
-  align-items: start;
-}
-
-.lookfor-heading {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  margin: var(--space-2) 0 var(--space-3);
-  line-height: 1.2;
-}
-
-.lookfor-text {
-  color: var(--ink-500);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.lookfor-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.lookfor-list li {
-  display: flex;
-  gap: var(--space-3);
-  align-items: flex-start;
-}
-
-.lookfor-check {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--accent-100);
-  color: var(--accent-600);
-  font-size: 0.85rem;
-  font-weight: 700;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.lookfor-list strong {
-  display: block;
-  font-size: 1.05rem;
-  color: var(--ink-900);
-  margin-bottom: 0.2rem;
-}
-
-.lookfor-list p {
-  font-size: 0.9rem;
-  color: var(--ink-500);
-  line-height: 1.6;
-}
-
-/* Application Form */
-.application-section {
-  background: var(--cream);
-}
-
-.application-header {
-  text-align: center;
-  margin-bottom: var(--space-5);
-}
-
-.application-intro {
-  color: var(--ink-500);
-  font-size: 1.05rem;
-  margin-top: var(--space-2);
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.application-form-wrap {
-  max-width: 720px;
-  margin: 0 auto;
-  background: var(--white);
-  padding: var(--space-5);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-}
-
-.form-section-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-600);
-  margin: var(--space-3) 0 var(--space-2);
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--ink-100);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .creators-benefits-grid {
-    grid-template-columns: 1fr;
-  }
-  .lookfor-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-}
+.aurevixa-dark-page{background:#0c0d0d;color:#f5f1e8;min-height:100vh;padding-top:72px}
+.aurevixa-page-hero{padding:80px 0 60px;border-bottom:1px solid rgba(205,177,127,.11)}
+.aurevixa-page-hero h1{font-size:clamp(42px,4.5vw,68px);max-width:800px;margin:0 0 30px}
+.aurevixa-page-hero h1 em{color:#cdb17f;font-style:italic}
+.aurevixa-page-lead{font-size:17px;line-height:1.7;color:#a8a7a2;max-width:540px}
+.aurevixa-page-section{padding:112px 0;border-bottom:1px solid rgba(205,177,127,.11)}
+.aurevixa-page-section h2{font-size:clamp(36px,4vw,52px);margin:0 0 60px}
+.aurevixa-page-section h2 em{color:#cdb17f;font-style:italic}
+.aurevixa-bordered-grid{border:1px solid rgba(205,177,127,.18)}
+.aurevixa-lookfor-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.aurevixa-lookfor-card{padding:45px 35px 40px;min-height:250px}
+.aurevixa-lookfor-card+.aurevixa-lookfor-card{border-left:1px solid rgba(205,177,127,.18)}
+.aurevixa-lookfor-card em{font:italic 13px Georgia,serif;color:#cdb17f}
+.aurevixa-lookfor-card h3{font-size:25px;margin:40px 0 18px}
+.aurevixa-lookfor-card p{font-size:15px;line-height:1.65;color:#999790}
+.aurevixa-enquiry-section{padding-bottom:130px}
+.aurevixa-enquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.aurevixa-enquiry-left h2{font-size:clamp(36px,4vw,48px);margin:0 0 30px}
+.aurevixa-enquiry-left h2 em{color:#cdb17f;font-style:italic}
+.aurevixa-enquiry-text{font-size:16px;line-height:1.7;color:#a8a7a2;max-width:400px}
+.aurevixa-form{display:flex;flex-direction:column;gap:24px}
+.aurevixa-form-group{display:flex;flex-direction:column;gap:8px}
+.aurevixa-form-group label{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:#cdb17f}
+.aurevixa-form-group input,.aurevixa-form-group textarea{background:transparent;border:none;border-bottom:1px solid rgba(205,177,127,.25);padding:12px 0;color:#f4eee3;font-size:15px;font-family:inherit;outline:none;transition:border-color .2s ease}
+.aurevixa-form-group input:focus,.aurevixa-form-group textarea:focus{border-color:#d3b27f}
+.aurevixa-form-group input::placeholder,.aurevixa-form-group textarea::placeholder{color:#5a5a63}
+.aurevixa-form-group textarea{resize:vertical;min-height:100px}
+.aurevixa-form-error{font-size:.8rem;color:#e04938}
+.aurevixa-form-success{text-align:center;padding:40px 0}
+.aurevixa-form-success h3{font-size:28px;margin-bottom:16px;color:#cdb17f}
+.aurevixa-form-success p{color:#a8a7a2;font-size:16px;line-height:1.7}
+.aurevixa-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 30px;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;transition:background .2s ease,color .2s ease,border-color .2s ease}
+.aurevixa-button-solid{background:#d3b27f;color:#111;border:1px solid #d3b27f}
+.aurevixa-button-solid:hover{background:#e0c594}
+.aurevixa-button-outline{color:#f4efe7;border:1px solid rgba(205,177,127,.42)}
+.aurevixa-button-outline:hover{border-color:#d3b27f;color:#d3b27f}
+.aurevixa-kicker{color:#cdb17f;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin:0 0 28px}
+@media(max-width:800px){.aurevixa-container{width:min(100% - 40px,600px)}.aurevixa-lookfor-grid{grid-template-columns:1fr}.aurevixa-lookfor-card+.aurevixa-lookfor-card{border-left:0;border-top:1px solid rgba(205,177,127,.18)}.aurevixa-enquiry-grid{grid-template-columns:1fr;gap:40px}.aurevixa-page-section{padding:80px 0}}

@@ -4,22 +4,12 @@ import './Navbar.css'
 
 const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/restaurants', label: 'For Restaurants' },
+  { to: '/restaurants', label: 'For Brands' },
   { to: '/creators', label: 'For Creators' },
-  { to: '/work', label: 'Work' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -30,8 +20,8 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`nav ${scrolled ? 'nav-scrolled' : ''}`}>
-        <div className="container nav-inner">
+      <header className="nav">
+        <div className="aurevixa-container nav-inner">
           <Link to="/" className="nav-logo" onClick={closeMenu}>
             <span className="nav-logo-text">Aurevixa</span>
           </Link>
@@ -50,8 +40,8 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <Link to="/contact" className="btn btn-primary nav-cta">
-            Get in Touch
+          <Link to="/contact" className="nav-cta" onClick={closeMenu}>
+            Get in touch
           </Link>
 
           <button
@@ -59,7 +49,6 @@ export default function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            <span></span>
             <span></span>
             <span></span>
           </button>
@@ -80,6 +69,9 @@ export default function Navbar() {
               {link.label}
             </NavLink>
           ))}
+          <Link to="/contact" onClick={closeMenu} className="mobile-menu-link">
+            Get in touch
+          </Link>
         </nav>
       </div>
       {menuOpen && <div className="mobile-menu-overlay" onClick={closeMenu} />}
